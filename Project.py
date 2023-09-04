@@ -110,7 +110,5 @@ except ValueError:
 except AssertionError:
         print("Zero or Negative numbers are not allowed, buddy🙏. Try again.")
 
-
-
 # num = int(input("Enter number to be converted: "))
 # print(f"The binary and hexadecimal of {num} are", bin(num),"and", hex(num))
