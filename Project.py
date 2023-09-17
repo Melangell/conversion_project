@@ -27,17 +27,13 @@ def hexadecimal_conversion(num):
         hexa += hexa_dict[remainder]
         num >>= 4
     return hexa[::-1]
+
 try:
     conversions = ["binary", "hexadecimal", "both"]
-    correctValue = False
-    
-    while not correctValue:
-        correctValue = True
+    conversion = input("What conversion do you want to perform?(Binary, Hexadecimal or Both) ")
+    while conversion not in conversions:
+        print("Try again. Check your spellings, pls.")
         conversion = input("What conversion do you want to perform?(Binary, Hexadecimal or Both) ")
-        if conversion not in conversions:
-            print("Try again")
-            correctValue = False
-
     num = int(input("Enter the number to be converted: "))
     assert num > 0
     if conversion.lower() == "binary":
@@ -50,7 +46,9 @@ try:
 except ValueError:
     print("Not a number, buddy😢🙏. Try again.")
 except AssertionError:
-        print("Zero or Negative numbers are not allowed, buddy🙏. Try again.")
-
-# num = int(input("Enter number to be converted: "))
-# print(f"The binary and hexadecimal of {num} are", bin(num),"and", hex(num))
+    print("Zero or Negative numbers are not allowed, buddy🙏. Try again.")
+except KeyboardInterrupt:
+    print("Keyboard interrupt error.")
+except:
+    print("Not the right conversion.😢")
+print("You're welcome.")
